@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Typography, Box, Grid, Stack, Button, ImageList, ImageListItem } from '@mui/material'
+import { Container, Typography, Box, Grid, Stack, Button } from '@mui/material'
 import ProductCard from '../../ProductCard/ProductCard'
 import product1 from '../../../images/product1.png'
 import product2 from '../../../images/product2.png'

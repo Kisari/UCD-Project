@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper, Typography, List, ListItemText, ListItem, ListItemAvatar, Avatar, Box, Grid, Button } from '@mui/material'
+import { Paper, Typography, Avatar, Box, Grid, Button } from '@mui/material'
 import Header from '../Header/Header'
 import Detail from '../Home/Detail/Detail'
 import Footer from '../Footer/Footer'
