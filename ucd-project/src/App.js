@@ -14,9 +14,9 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/AI/assistant/1" element={<AIProgess1 />} />
-          <Route exact path="/AI/assistant/2" element={<AIProgess2 />} />
-          <Route exact path="/AI/assistant/3" element={<AIProgess3 />} />
-          <Route exact path="/AI/assistant/4" element={<AIProgess4 />} />
+          <Route exact path="/AI/assistant/2/:computer" element={<AIProgess2 />} />
+          <Route exact path="/AI/assistant/3/:computer/:purpose" element={<AIProgess3 />} />
+          <Route exact path="/AI/assistant/4/:computer/:purpose/:budget" element={<AIProgess4 />} />
         </Routes>
       </Router>
     </>

@@ -48,7 +48,7 @@ const Home = () => {
                             <Typography variant="subtitle1" component="div" sx={{ marginY: '32px' }}>
                                 Lorem ipsum
                             </Typography>
-                            <Button variant='contained' href='/AI/assistant/1'>
+                            <Button variant='contained' href='/AI/assistant/1' sx={{ background: '#4277ff' }}>
                                 Click now!
                             </Button>
                         </Grid>

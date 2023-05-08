@@ -36,7 +36,7 @@ const Header = () => {
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
-                                        <img src={searchIcon} alt="searchIcon" />
+                                        <img src={searchIcon} alt="searchIcon" style={{ width: '32px', height: '32px' }} />
                                     </InputAdornment>
                                 ),
                                 endAdornment: (
@@ -62,6 +62,7 @@ const Header = () => {
                         <ButtonGroup
                             disableElevation
                             aria-label="Disabled elevation buttons"
+                            spacing={3}
                         >
                             <Button sx={{
                                 background: "#FFFFFF",
@@ -71,18 +72,31 @@ const Header = () => {
                             <Button sx={{
                                 background: "#001834",
                                 color: "#FFFFFF",
+                                "&:hover": { backgroundColor: "#1976d2" }
                             }}>Login</Button>
                         </ButtonGroup>
                         <Badge badgeContent={1} color="primary">
-                            <img src={deleteIcon} alt="deleteIcon" />
+                            <img src={deleteIcon} alt="deleteIcon" style={{ width: '32px', height: '32px' }} />
                         </Badge>
                     </Grid>
                 </Grid>
-                <Stack direction={{ sm: 'column', md: 'row' }}
-                    justifyContent="space-between"
+                <Stack direction={{ xs: 'column', md: 'row' }}
+                    justifyContent="center"
                     alignItems="center"
-                    spacing={{ sm: 3, md: 0.5 }}
-                    sx={{ paddingY: "16px" }}
+                    useFlexGap
+                    flexWrap="wrap"
+                    spacing={{ xs: 3, md: 2 }}
+                    sx={{
+                        paddingY: "16px",
+                        '& > button': {
+                            border: 'none'
+                        },
+                        '& > button:hover': {
+                            backgroundColor: "#1976d2",
+                            color: '#FFFFFF',
+                            border: 'none'
+                        },
+                    }}
                 >
                     <Button variant="outlined" sx={{ textTransform: 'none', color: '#0A2540', fontSize: '14px' }} startIcon={<img src={allProducts} alt="deleteIcon" />}>
                         All Products
@@ -100,7 +114,8 @@ const Header = () => {
                         Smartphones
                     </Button>
                     <Button variant="outlined" sx={{
-                        textTransform: 'none', color: '#FFFFFF', background: '#0A2540', fontSize: '14px'
+                        textTransform: 'none', color: '#FFFFFF', background: '#0A2540', fontSize: '14px',
+                        "&:hover": { backgroundColor: "#1976d2" }
                     }} startIcon={<img src={aiPurchase} alt="deleteIcon" />}>
                         AI Purchase Assistant - Find your perfect machine!
                     </Button>

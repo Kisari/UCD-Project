@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Grid, Typography, Link } from '@mui/material'
+import { Container, Grid, Typography, Button } from '@mui/material'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import AIsubtitle from './AIsubtitle'
@@ -28,7 +28,28 @@ const AIProgess1 = () => {
                     spacing={2}
                 >
                     <Grid item >
-                        <Link href="/AI/assistant/2" underline="none">
+                        <Button href="/AI/assistant/2/PC" underline="none" sx={{
+                            position: 'relative',
+                            textAlign: 'center',
+                            width: '450px',
+                            height: '300px',
+                            '&:hover > *': {
+                                opacity: 0.5,
+                                background: 'rgba(0, 0, 0, 0.5)',
+                            },
+                            '&:hover::after': {
+                                content: '"PC"',
+                                opacity: 1,
+                                position: 'absolute',
+                                zIndex: 99999,
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                                fontSize: '2.5rem',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                            }
+                        }}>
                             <img src={computer} alt="cute robot" style={{
                                 maxWidth: '450px',
                                 maxHeight: '300px',
@@ -36,10 +57,31 @@ const AIProgess1 = () => {
                                 boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)',
                                 borderRadius: '8px',
                             }} />
-                        </Link>
+                        </Button>
                     </Grid>
-                    <Grid item href='/AI/assistant/2'>
-                        <Link href="/AI/assistant/2" underline="none">
+                    <Grid item>
+                        <Button href="/AI/assistant/2/Laptops" underline="none" sx={{
+                            position: 'relative',
+                            textAlign: 'center',
+                            width: '450px',
+                            height: '300px',
+                            '&:hover > *': {
+                                opacity: 0.5,
+                                background: 'rgba(0, 0, 0, 0.5)',
+                            },
+                            '&:hover::after': {
+                                content: '"Laptops"',
+                                opacity: 1,
+                                position: 'absolute',
+                                zIndex: 99999,
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                                fontSize: '2.5rem',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                            }
+                        }}>
                             <img src={laptop} alt="cute robot" style={{
                                 maxWidth: '450px',
                                 maxHeight: '300px',
@@ -47,7 +89,7 @@ const AIProgess1 = () => {
                                 boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)',
                                 borderRadius: '8px',
                             }} />
-                        </Link>
+                        </Button>
                     </Grid>
                 </Grid>
             </Container>

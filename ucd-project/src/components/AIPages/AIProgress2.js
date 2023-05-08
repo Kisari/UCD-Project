@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container, Grid, Typography, Link, Button } from '@mui/material'
+import { useParams } from 'react-router-dom';
+import { Container, Grid, Typography, Button } from '@mui/material'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import AIsubtitle from './AIsubtitle'
@@ -9,6 +10,9 @@ import purpose3 from '../../images/designer 2d.jpg'
 import purpose4 from '../../images/programming.jpg'
 
 const AIProgess2 = () => {
+    let { computer } = useParams();
+    let link = `/AI/assistant/3/${computer}`;
+    console.log(computer);
     return (
         <>
             <Header></Header>
@@ -30,7 +34,28 @@ const AIProgess2 = () => {
                     spacing={4}
                 >
                     <Grid item >
-                        <Link href="/AI/assistant/3" underline="none">
+                        <Button href={`${link}/Gaming`} underline="none" sx={{
+                            position: 'relative',
+                            textAlign: 'center',
+                            width: '250px',
+                            height: '250px',
+                            '&:hover > *': {
+                                opacity: 0.5,
+                                background: 'rgba(0, 0, 0, 1.2)',
+                            },
+                            '&:hover::after': {
+                                content: '"Gaming"',
+                                opacity: 1,
+                                position: 'absolute',
+                                zIndex: 99999,
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                                fontSize: '2.5rem',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                            }
+                        }}>
                             <img src={purpose1} alt="cute robot" style={{
                                 maxWidth: '400px',
                                 maxHeight: '250px',
@@ -38,10 +63,31 @@ const AIProgess2 = () => {
                                 boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)',
                                 borderRadius: '8px',
                             }} />
-                        </Link>
+                        </Button>
                     </Grid>
                     <Grid item>
-                        <Link href="/AI/assistant/3" underline="none">
+                        <Button href={`${link}/Office`} underline="none" sx={{
+                            position: 'relative',
+                            textAlign: 'center',
+                            width: '250px',
+                            height: '250px',
+                            '&:hover > *': {
+                                opacity: 0.5,
+                                background: 'rgba(0, 0, 0, 1.2)',
+                            },
+                            '&:hover::after': {
+                                content: '"Office"',
+                                opacity: 1,
+                                position: 'absolute',
+                                zIndex: 99999,
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                                fontSize: '2.5rem',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                            }
+                        }}>
                             <img src={purpose2} alt="cute robot" style={{
                                 maxWidth: '400px',
                                 maxHeight: '250px',
@@ -49,11 +95,32 @@ const AIProgess2 = () => {
                                 boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)',
                                 borderRadius: '8px',
                             }} />
-                        </Link>
+                        </Button>
                     </Grid>
                     <Grid item>
 
-                        <Link href="/AI/assistant/3" underline="none">
+                        <Button href={`${link}/Design`} underline="none" sx={{
+                            position: 'relative',
+                            textAlign: 'center',
+                            width: '250px',
+                            height: '250px',
+                            '&:hover > *': {
+                                opacity: 0.5,
+                                background: 'rgba(0, 0, 0, 1.2)',
+                            },
+                            '&:hover::after': {
+                                content: '"Design 2D"',
+                                opacity: 1,
+                                position: 'absolute',
+                                zIndex: 99999,
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                                fontSize: '2.5rem',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                            }
+                        }}>
                             <img src={purpose3} alt="cute robot" style={{
                                 maxWidth: '400px',
                                 maxHeight: '250px',
@@ -61,10 +128,31 @@ const AIProgess2 = () => {
                                 boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)',
                                 borderRadius: '8px',
                             }} />
-                        </Link>
+                        </Button>
                     </Grid>
                     <Grid item>
-                        <Link href="/AI/assistant/3" underline="none">
+                        <Button href={`${link}/Coding`} underline="none" sx={{
+                            position: 'relative',
+                            textAlign: 'center',
+                            width: '250px',
+                            height: '250px',
+                            '&:hover > *': {
+                                opacity: 0.5,
+                                background: 'rgba(0, 0, 0, 1.2)',
+                            },
+                            '&:hover::after': {
+                                content: '"Coding"',
+                                opacity: 1,
+                                position: 'absolute',
+                                zIndex: 99999,
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                                fontSize: '2.5rem',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                            }
+                        }}>
                             <img src={purpose4} alt="cute robot" style={{
                                 maxWidth: '400px',
                                 maxHeight: '250px',
@@ -72,7 +160,7 @@ const AIProgess2 = () => {
                                 boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)',
                                 borderRadius: '8px',
                             }} />
-                        </Link>
+                        </Button>
                     </Grid>
 
                 </Grid>
@@ -80,7 +168,7 @@ const AIProgess2 = () => {
                     direction='row'
                     justifyContent='center'
                     alignItems='center'>
-                    <Link href="/AI/assistant/1" underline="none">
+                    <Button href="/AI/assistant/1" underline="none">
                         <Button variant='outline' sx={{
                             color: '#001834', background: '#FFFFFF',
                             border: '1px solid #001834',
@@ -88,7 +176,7 @@ const AIProgess2 = () => {
                             marginTop: '16px'
                         }}>Back</Button>
 
-                    </Link>
+                    </Button>
                 </Grid>
             </Container>
             <Footer></Footer>

@@ -1,72 +1,26 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { SSE } from "sse.js";
-import { Container, Grid, Typography, Link, Button, TextField, InputAdornment, Avatar } from '@mui/material'
+import React, { useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom';
+import { Container, Grid, Typography, Link, Button, TextField } from '@mui/material'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import AIsubtitle from './AIsubtitle'
 import money from '../../images/money.png'
 const AIProgess3 = () => {
-    const API_KEY = "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";
-    let [prompt, setPrompt] = useState("What is AI");
-    let [isLoading, setIsLoading] = useState(false);
-    let [result, setResult] = useState("");
-
-    const resultRef = useRef();
-
-    useEffect(() => {
-        resultRef.current = result;
-    }, [result]);
-
-    let handleSubmitPromptBtnClicked = async () => {
-        if (prompt !== "") {
-            setIsLoading(true);
-            setResult("");
-            let url = "https://api.openai.com/v1/completions";
-            let data = {
-                model: "text-davinci-003",
-                prompt: prompt,
-                temperature: 0.75,
-                top_p: 0.95,
-                max_tokens: 100,
-                stream: true,
-                n: 1,
-            };
-
-            let source = new SSE(url, {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${API_KEY}`,
-                },
-                method: "POST",
-                payload: JSON.stringify(data),
-            });
-
-            source.addEventListener("message", (e) => {
-                if (e.data !== "[DONE]") {
-                    let payload = JSON.parse(e.data);
-                    let text = payload.choices[0].text;
-                    if (text !== "\n") {
-                        console.log("Text: " + text);
-                        resultRef.current = resultRef.current + text;
-                        console.log("ResultRef.current: " + resultRef.current);
-                        setResult(resultRef.current);
-                    }
-                } else {
-                    source.close();
-                }
-            });
-
-            source.addEventListener("readystatechange", (e) => {
-                if (e.readyState >= 2) {
-                    setIsLoading(false);
-                }
-            });
-
-            source.stream();
-        } else {
-            alert("Please insert a prompt!");
+    let { computer, purpose } = useParams();
+    const [value, setValue] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const handleSubmit = () => {
+        if (value === '') {
+            setError('Please input your desired budget');
+            return;
         }
-    };
+        if (!(!isNaN(value) && !isNaN(parseFloat(value)))) {
+            setError('Please input a valid number');
+            return;
+        }
+        navigate(`/AI/assistant/4/${computer}/${purpose}/${value}`);
+    }
     return (
         <>
             <Header></Header>
@@ -86,19 +40,53 @@ const AIProgess3 = () => {
                     justifyContent='center'
                     alignItems='center'
                     sx={{
-                        marginY: '3.5rem'
+                        marginY: '3.5rem',
+
                     }}
                 >
-                    <TextField
-                        label="1,250.00$"
+                    {/* <TextField
+                        placeholder="1,250.00"
                         InputProps={{
                             startAdornment: (
-                                <InputAdornment position="start" sx={{ background: '#E2E8F0' }}>
+                                <InputAdornment position="start" sx={{ background: 'black' }}>
                                     <Avatar src={money} alt='dollars currency' sx={{ width: '24px', height: '24px' }}></Avatar>
                                 </InputAdornment>
                             ),
                         }}
-                        variant="standard"></TextField>
+                        variant="standard"
+                        autoFocus
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                        helperText={error ? error : null}
+                        error={error ? true : false}
+                        sx={{
+                            border: '1px solid red',
+                        }}
+                    /> */}
+                    <Grid item sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', background: '#edf2f7', border: '1px solid #E2E8F0' }}>
+                        <img src={money} alt='dollars currency' style={{ width: '24px', height: '24px' }}></img>
+                    </Grid>
+                    {/* , width: 'auto', height: '48px' */}
+                    <Grid item sx={{
+                        border: '1px solid #E2E8F0'
+                    }}>
+                        <TextField
+                            type="text"
+                            label="1,250.00"
+                            variant="outlined"
+                            inputProps={{
+                                style: {
+                                    height: "36px",
+                                    padding: "6px"
+                                },
+                            }}
+                            autoFocus
+                            value={value}
+                            onChange={(e) => setValue(e.target.value)}
+                            helperText={error ? error : null}
+                            error={error ? true : false}
+                        />
+                    </Grid>
                 </Grid>
                 <Grid container
                     direction='row'
@@ -106,7 +94,7 @@ const AIProgess3 = () => {
                     alignItems='center'
                     spacing={3}>
                     <Grid item>
-                        <Link href="/AI/assistant/2" underline="none">
+                        <Link href={`/AI/assistant/2/${computer}`} underline="none">
                             <Button variant='outline' sx={{
                                 color: '#001834', background: '#FFFFFF',
                                 border: '1px solid #001834',
@@ -116,24 +104,20 @@ const AIProgess3 = () => {
                         </Link>
                     </Grid>
                     <Grid item>
-                        <Link href="/AI/assistant/4" underline="none">
+                        <Link underline="none" onClick={handleSubmit}>
                             <Button variant='contained' sx={{
                                 color: '#FFFFFF', background: '#001834',
                                 border: '1px solid #001834',
                                 borderRadius: '4px',
-                                marginTop: '16px'
+                                marginTop: '16px',
+                                '&:hover': {
+                                    background: '#001834'
+                                }
                             }}>FINISH AND SUBMIT</Button>
                         </Link>
                     </Grid>
                 </Grid>
             </Container>
-            <Button variant='contained' sx={{
-                color: '#FFFFFF', background: '#001834',
-                border: '1px solid #001834',
-                borderRadius: '4px',
-                marginTop: '16px'
-            }}
-                onClick={handleSubmitPromptBtnClicked}>AI</Button>
             <Footer></Footer>
         </>
     )
