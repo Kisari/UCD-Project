@@ -25,7 +25,8 @@ const AIProgess3 = () => {
         <>
             <Header></Header>
             <AIsubtitle></AIsubtitle>
-            <Container component='main' disableGutters maxWidth='xl' sx={{ background: '#FAFBFE', display: 'flex', flexDirection: 'column', marginBottom: '15rem' }}>
+            <Container component='main' disableGutters maxWidth='xl'
+                sx={{ background: '#FAFBFE', display: 'flex', flexDirection: 'column', marginBottom: '15rem', paddingTop: '90px', paddingBottom: '90px' }}>
                 <Typography component='div' sx={{
                     color: '#000000',
                     fontWeight: '700',
@@ -71,13 +72,17 @@ const AIProgess3 = () => {
                         border: '1px solid #E2E8F0'
                     }}>
                         <TextField
+                            sx={{
+                                "& fieldset": { border: 'none' },
+                                backgroundColor: "#FFFFFF"
+                            }}
                             type="text"
-                            label="1,250.00"
+                            placeholder="1,250.00"
                             variant="outlined"
                             inputProps={{
                                 style: {
                                     height: "36px",
-                                    padding: "6px"
+                                    padding: "6px",
                                 },
                             }}
                             autoFocus

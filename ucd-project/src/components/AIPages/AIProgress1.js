@@ -11,7 +11,8 @@ const AIProgess1 = () => {
         <>
             <Header></Header>
             <AIsubtitle></AIsubtitle>
-            <Container component='main' disableGutters maxWidth='xl' sx={{ background: '#FAFBFE', display: 'flex', flexDirection: 'column', marginBottom: '15rem' }}>
+            <Container component='main' disableGutters maxWidth='xl'
+                sx={{ background: '#FAFBFE', display: 'flex', flexDirection: 'column', marginBottom: '15rem', paddingTop: '90px', paddingBottom: '90px' }}>
                 <Typography component='div' sx={{
                     color: '#000000',
                     fontWeight: '700',

@@ -17,7 +17,8 @@ const AIProgess2 = () => {
         <>
             <Header></Header>
             <AIsubtitle></AIsubtitle>
-            <Container component='main' disableGutters maxWidth='xl' sx={{ background: '#FAFBFE', display: 'flex', flexDirection: 'column', marginBottom: '15rem' }}>
+            <Container component='main' disableGutters maxWidth='xl'
+                sx={{ background: '#FAFBFE', display: 'flex', flexDirection: 'column', marginBottom: '15rem', paddingTop: '90px', paddingBottom: '90px' }}>
                 <Typography component='div' sx={{
                     color: '#000000',
                     fontWeight: '700',
@@ -168,14 +169,14 @@ const AIProgess2 = () => {
                     direction='row'
                     justifyContent='center'
                     alignItems='center'>
-                    <Button href="/AI/assistant/1" underline="none">
-                        <Button variant='outline' sx={{
-                            color: '#001834', background: '#FFFFFF',
-                            border: '1px solid #001834',
-                            borderRadius: '4px',
-                            marginTop: '16px'
-                        }}>Back</Button>
-
+                    <Button href="/AI/assistant/1" underline="none" variant='outlined' sx={{
+                        color: '#001834', background: '#FFFFFF',
+                        border: '1px solid #001834',
+                        borderRadius: '4px',
+                        marginTop: '16px',
+                        "&:hover": { backgroundColor: "#F1F5FB", border: '1px solid #001834' }
+                    }}>
+                        Back
                     </Button>
                 </Grid>
             </Container>

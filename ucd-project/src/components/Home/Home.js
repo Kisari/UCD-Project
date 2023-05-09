@@ -1,7 +1,7 @@
 import React from 'react'
 import { Paper, Typography, Avatar, Box, Grid, Button } from '@mui/material'
 import Header from '../Header/Header'
-import Detail from '../Home/Detail/Detail'
+import Detail from './Detail/Detail'
 import Footer from '../Footer/Footer'
 import cuteRobot from '../../images/cute-robot-colour.png'
 import des1 from '../../images/des1.png'
@@ -48,7 +48,9 @@ const Home = () => {
                             <Typography variant="subtitle1" component="div" sx={{ marginY: '32px' }}>
                                 Lorem ipsum
                             </Typography>
-                            <Button variant='contained' href='/AI/assistant/1' sx={{ background: '#4277ff' }}>
+                            <Button
+                                size='large'
+                                variant='contained' href='/AI/assistant/1' sx={{ background: '#2D67FF', "&:hover": { backgroundColor: '#4277ff', borderColor: "#2D67FF", color: "#FFFFFF" } }}>
                                 Click now!
                             </Button>
                         </Grid>
