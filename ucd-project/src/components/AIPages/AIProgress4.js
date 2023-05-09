@@ -5,6 +5,7 @@ import { Container, Grid, Typography, Link, Button, Box, Stack } from '@mui/mate
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import AIsubtitle from './AIsubtitle'
+
 const AIProgess4 = () => {
     const API_KEY = process.env.API_KEY;
     let { computer, purpose, budget } = useParams();
@@ -19,9 +20,11 @@ const AIProgess4 = () => {
     let [result, setResult] = useState("");
     const resultRef = useRef();
 
-    // const sampleResult = `recStart = {"CPU": {"option1": {"name": "AMD Ryzen 3 3100", "pros": "Quad-core, good performance for its price", "cons": "May bottleneck high-end GPUs" }, "option2": {"name": "Intel Core i3-10100", "pros": "Quad-core, good single-core performance", "cons": "No integrated graphics"}}, "GPU": {"option1": {"name": "NVIDIA GeForce GT 1030", "pros": "Affordable, low power consumption", "cons": "Limited VRAM, not suitable for demanding tasks"}, "option2": {"name": "AMD Radeon RX 550", "pros": "Affordable, decent performance for its price", "cons": "May struggle with demanding tasks"}}, "RAM": {"option1": {"name": "Crucial Ballistix 8GB DDR4 3200MHz", "pros": "Affordable, good performance for its price", "cons": "Only 8GB of RAM"}, "option2": {"name": "Corsair Vengeance LPX 16GB DDR4 3000MHz", "pros": "16GB of RAM, good performance", "cons": "More expensive than the other option"}}, "Storage": {"option1": {"name": "Kingston A400 240GB SSD", "pros": "Affordable, good performance for its price", "cons": "Limited storage capacity"}, "option2": {"name": "Crucial MX500 500GB SSD", "pros": "More storage capacity, good performance", "cons": "More expensive than the other option"}}, "PowerSupply": {"option1": {"name": "EVGA 400W", "pros": "Affordable, good for low power systems", "cons": "Not suitable for high power systems"}, "option2": {"name": "Corsair CX450M 450W", "pros": "More power, semi-modular", "cons": "More expensive than the other option"}}, "Case": {"option1": {"name": "Cooler Master MasterBox Q300L", "pros": "Affordable, good airflow", "cons": "Limited cable management options"}, "option2": {"name": "Phanteks Eclipse P300A", "pros": "Good cable management, good airflow", "cons": "More expensive than the other option"}}} = recEnd`
-    // const finalResult = JSON.parse(sampleResult.slice(11, sampleResult.length - 9).replace(/&quot;/ig, '"'));
-    // console.log(finalResult);
+    const sampleError = `recStart = {"error": "Insufficient Budget"} = recEnd`
+    const sampleResult = `recStart = {"CPU": {"option1": {"name": "AMD Ryzen 3 3100", "pros": "Quad-core, good performance for its price", "cons": "May bottleneck high-end GPUs" }, "option2": {"name": "Intel Core i3-10100", "pros": "Quad-core, good single-core performance", "cons": "No integrated graphics"}}, "GPU": {"option1": {"name": "NVIDIA GeForce GT 1030", "pros": "Affordable, low power consumption", "cons": "Limited VRAM, not suitable for demanding tasks"}, "option2": {"name": "AMD Radeon RX 550", "pros": "Affordable, decent performance for its price", "cons": "May struggle with demanding tasks"}}, "RAM": {"option1": {"name": "Crucial Ballistix 8GB DDR4 3200MHz", "pros": "Affordable, good performance for its price", "cons": "Only 8GB of RAM"}, "option2": {"name": "Corsair Vengeance LPX 16GB DDR4 3000MHz", "pros": "16GB of RAM, good performance", "cons": "More expensive than the other option"}}, "Storage": {"option1": {"name": "Kingston A400 240GB SSD", "pros": "Affordable, good performance for its price", "cons": "Limited storage capacity"}, "option2": {"name": "Crucial MX500 500GB SSD", "pros": "More storage capacity, good performance", "cons": "More expensive than the other option"}}, "PowerSupply": {"option1": {"name": "EVGA 400W", "pros": "Affordable, good for low power systems", "cons": "Not suitable for high power systems"}, "option2": {"name": "Corsair CX450M 450W", "pros": "More power, semi-modular", "cons": "More expensive than the other option"}}, "Case": {"option1": {"name": "Cooler Master MasterBox Q300L", "pros": "Affordable, good airflow", "cons": "Limited cable management options"}, "option2": {"name": "Phanteks Eclipse P300A", "pros": "Good cable management, good airflow", "cons": "More expensive than the other option"}}} = recEnd`
+    const sampleResultLaptop = `recStart = {"option1": {"name": "Acer Aspire 5 A515-56-73AP", "pros": "Affordable price, Intel Core i7-1165G7, 15.6-inch FHD IPS display, 8GB DDR4 RAM, 512GB NVMe SSD", "cons": "No discrete graphics card, limited upgradability options"} , "option2": {"name": "ASUS VivoBook 15 F515 Thin and Light Laptop", "pros": "Affordable price, AMD Ryzen 7 5700U, 15.6-inch FHD display, 8GB DDR4 RAM, 512GB NVMe SSD, Integrated Radeon Graphics", "cons": "No discrete graphics card, limited upgradability options"} , "option3": {"name": "Lenovo Ideapad 3 15.6-inch Laptop", "pros": "Affordable price, Intel Core i5-1135G7, 15.6-inch FHD display, 8GB DDR4 RAM, 256GB SSD, Integrated Intel Iris Xe Graphics", "cons": "No discrete graphics card, limited upgradability options"}} = recEnd`
+    const finalResult = (computer === "PC") ? JSON.parse(sampleResult.slice(11, sampleResult.length - 9).replace(/&quot;/ig, '"')) : (computer === "Laptops") ? JSON.parse(sampleResultLaptop.slice(11, sampleResultLaptop.length - 9).replace(/&quot;/ig, '"')) : JSON.parse(sampleError.slice(11, sampleError.length - 9).replace(/&quot;/ig, '"'));
+    console.log(finalResult);
 
     useEffect(() => {
         resultRef.current = result;
@@ -97,67 +100,83 @@ const AIProgess4 = () => {
                     marginBottom: '36px'
                 }}>Your results!</Typography>
 
-
-                <Grid container
-                    direction='column'
-                    justifyContent='center'
-                    alignItems='center'
-                    sx={{
-                        marginY: '3.5rem'
-                    }}
-                    spacing={1}
-                >
-                    {
-                        (isLoading) ? <p>...loading</p> :
-                            ((computer === "PC")
-                                ?
-                                <>
-                                    {Object.entries(result).map((key, number) => {
+                {
+                    (isLoading) ? <p>...loading</p> :
+                        (computer === "PC") ?
+                            <Grid container
+                                direction='column'
+                                justifyContent='center'
+                                alignItems='start'
+                                sx={{
+                                    marginY: '3.5rem',
+                                    paddingLeft: '35%'
+                                }}
+                                spacing={1}
+                            >
+                                {Object.entries(finalResult).map((key, number) => {
+                                    return (
+                                        <Grid item key={number}>
+                                            <p style={{ color: '#000000', fontFamily: 'Inter', fontWeight: 700, fontSize: '32px', textTransform: 'capitalize' }}>
+                                                {number + 1}. {key[0]}
+                                            </p>
+                                            {Object.entries(key[1]).map((option, index) => {
+                                                return (
+                                                    <Box key={index} sx={{ padding: '8px', color: '#000000', fontFamily: 'Inter', fontWeight: 600, fontSize: '16px', textTransform: 'capitalize' }}>
+                                                        <p style={{ fontSize: '18px' }}>Option {index + 1}: {option[1].name}</p>
+                                                        <Box sx={{ display: 'flex', flexDirection: 'column', padding: '8px' }}>
+                                                            <Typography component='div' variant='body1' sx={{ color: '#000000', fontFamily: 'Inter', fontWeight: 300, fontSize: '16px' }}>
+                                                                <b>Pros:</b> {option[1].pros}
+                                                            </Typography>
+                                                            <Typography component='div' variant='body1' sx={{ color: '#000000', fontFamily: 'Inter', fontWeight: 300, fontSize: '16px' }}>
+                                                                <b>Cons:</b> {option[1].cons}
+                                                            </Typography>
+                                                        </Box>
+                                                        <Stack spacing={4} direction="row" sx={{ marginLeft: '16px' }}>
+                                                            <Button variant='contained' size='small' sx={{ background: '#2DA7FF' }}>See details</Button>
+                                                            <Button variant='contained' size='small' sx={{ background: '#38A169' }}>Buy now</Button>
+                                                        </Stack>
+                                                    </Box>
+                                                )
+                                            })}
+                                        </Grid>
+                                    )
+                                })}
+                            </Grid>
+                            : (computer === "Laptops") ?
+                                <Grid container
+                                    direction='column'
+                                    justifyContent='center'
+                                    alignItems='start'
+                                    sx={{
+                                        marginY: '3.5rem',
+                                        paddingLeft: '15%'
+                                    }}
+                                    spacing={1}
+                                >
+                                    {Object.keys(finalResult).map((key, number) => {
                                         return (
                                             <Grid item key={number}>
-                                                <Box sx={{ display: 'flex', padding: '12px', flexDirection: 'column', color: '#000000', fontFamily: 'Inter', fontWeight: 700, fontSize: '32px', textTransform: 'capitalize' }}>
-                                                    {key[0]}
-                                                    {Object.entries(key[1]).map((option, index) => {
-                                                        return (
-                                                            <Box key={index} sx={{ padding: '8px', color: '#000000', fontFamily: 'Inter', fontWeight: 600, fontSize: '16px', textTransform: 'capitalize' }}>
-                                                                {option[0]}
-                                                                <Box sx={{ display: 'flex', flexDirection: 'column', padding: '8px' }}>
-                                                                    <Typography component='div' variant='body1' sx={{ color: '#000000', fontFamily: 'Inter', fontWeight: 400, fontSize: '16px', textTransform: 'capitalize' }}>
-                                                                        Name : {option[1].name}
-                                                                    </Typography>
-                                                                    <Typography component='div' variant='body1' sx={{ color: '#000000', fontFamily: 'Inter', fontWeight: 300, fontSize: '16px' }}>
-                                                                        Cons : {option[1].cons}
-                                                                    </Typography>
-                                                                    <Typography component='div' variant='body1' sx={{ color: '#000000', fontFamily: 'Inter', fontWeight: 300, fontSize: '16px' }}>
-                                                                        Props : {option[1].pros}
-                                                                    </Typography>
-                                                                </Box>
-                                                                <Stack spacing={4} direction="row" sx={{ marginLeft: '16px' }}>
-                                                                    <Button variant='contained' size='small' sx={{ background: '#2DA7FF' }}>See details</Button>
-                                                                    <Button variant='contained' size='small' sx={{ background: '#38A169' }}>Buy now</Button>
-                                                                </Stack>
-                                                            </Box>
-                                                        )
-                                                    })}
+                                                <p style={{ color: '#000000', fontFamily: 'Inter', fontWeight: 700, fontSize: '32px', textTransform: 'capitalize' }}>
+                                                    {number + 1}. {finalResult[key].name}
+                                                </p>
+                                                <Box sx={{ display: 'flex', flexDirection: 'column', padding: '8px' }}>
+                                                    <Typography component='div' variant='body1' sx={{ color: '#000000', fontFamily: 'Inter', fontWeight: 300, fontSize: '16px' }}>
+                                                        <b>Pros:</b> {finalResult[key].pros}
+                                                    </Typography>
+                                                    <Typography component='div' variant='body1' sx={{ color: '#000000', fontFamily: 'Inter', fontWeight: 300, fontSize: '16px' }}>
+                                                        <b>Cons:</b> {finalResult[key].cons}
+                                                    </Typography>
                                                 </Box>
+                                                <Stack spacing={4} direction="row" sx={{ marginLeft: '16px' }}>
+                                                    <Button variant='contained' size='small' sx={{ background: '#2DA7FF' }}>See details</Button>
+                                                    <Button variant='contained' size='small' sx={{ background: '#38A169' }}>Buy now</Button>
+                                                </Stack>
                                             </Grid>
                                         )
                                     })}
-                                </>
-                                :
-                                (computer === "Laptops")
-                                    ?
-                                    <>
-
-                                    </>
-                                    :
-                                    <>
-                                        Error
-                                    </>
-                            )
-                    }
-
-                </Grid>
+                                </Grid>
+                                : <p> Error </p>
+                }
                 <Grid container
                     direction='row'
                     justifyContent='center'
