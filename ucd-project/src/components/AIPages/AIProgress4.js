@@ -5,9 +5,8 @@ import { Container, Grid, Typography, Link, Button, Box, Stack } from '@mui/mate
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import AIsubtitle from './AIsubtitle'
-import e from 'express';
 const AIProgess4 = () => {
-    const API_KEY = "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";
+    const API_KEY = process.env.API_KEY;
     let { computer, purpose, budget } = useParams();
     let [prompt, setPrompt] = useState(`You will act as a computer hardware expert. I will ask you for recommendations of PC builds or Laptops with specific purpose of use and budget. If I ask for "PC", you will answer with 2 recommendations for each part of the PC, along with the pros and cons of each item. If I ask for "Laptops", you will answer with 3 recommendations of laptops, along with the pros and cons each item. If budget is not enough, you can simple reply: recStart = {error: "Insufficient Budget"} = recEnd
     Your answer will be in the following format for laptops:
@@ -78,9 +77,9 @@ const AIProgess4 = () => {
         }
     };
 
-    // useEffect(() => {
-    //     handleSubmitPromptBtnClicked();
-    // }, []);
+    useEffect(() => {
+        handleSubmitPromptBtnClicked();
+    }, []);
 
     return (
 
