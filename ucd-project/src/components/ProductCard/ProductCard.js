@@ -6,8 +6,8 @@ import card2 from '../../images/card2.png'
 const ProductCard = ({ product }) => {
     const currencies = [
         {
-            value: '1 stk',
-            label: '1 stk',
+            value: 'quantity: 1',
+            label: 'quantity: 1',
         }]
     return (
         <>
@@ -102,7 +102,7 @@ const ProductCard = ({ product }) => {
                         </Grid>
                         <Grid item>
                             <Button variant='contained' sx={{ background: '#001834', color: '#FFFFFF', fontWeight: '600', fontSize: '12px' }}>
-                                Tilføj Til Kurven
+                                Add to cart
                             </Button>
                         </Grid>
                     </Grid>
@@ -116,7 +116,7 @@ const ProductCard = ({ product }) => {
                         <Grid item sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                             <img src={card1} alt="box" />
                             <Typography varian='body1' component='span' sx={{ marginLeft: '8px' }}>
-                                40 stk på lager
+                                40 pieces in stock
                             </Typography>
                         </Grid>
                         <Grid item>

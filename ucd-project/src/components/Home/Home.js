@@ -34,7 +34,7 @@ const Home = () => {
                             '@media (max-width: 660px)': {
                                 "& > *": {
                                     display: 'flex',
-                                    justifyContent: 'center',
+                                    justifyContent: 'start',
                                     alignItems: 'center'
                                 }
                             },
@@ -93,13 +93,13 @@ const Home = () => {
                                     fontSize: '14px',
                                     lineHeight: '100%',
                                     marginBottom: '0.5rem'
-                                }}>Kæmpe produkt sortiment</Typography>
+                                }}>Huge product range</Typography>
                                 <Typography sx={{
                                     color: '#425466',
                                     fontWeight: 400,
                                     fontSize: '14px',
                                     lineHeight: '140%',
-                                }}>25.000 varer i vores basissortimentet 8.000 varer på lager</Typography>
+                                }}>Over 25,000 items of 8,000 product types are in stock!</Typography>
                             </Box>
                         </Grid>
                         <Grid item
@@ -125,13 +125,13 @@ const Home = () => {
                                     fontSize: '14px',
                                     lineHeight: '100%',
                                     marginBottom: '0.5rem'
-                                }}>Hurtig levering</Typography>
+                                }}>Fast delivery</Typography>
                                 <Typography sx={{
                                     color: '#425466',
                                     fontWeight: 400,
                                     fontSize: '14px',
                                     lineHeight: '140%',
-                                }}><span>Bestil inden <b style={{ color: "#425466" }}>09:06:14</b> på lagervarer, og forvent at få din ordre afsendt i dag.</span></Typography>
+                                }}><span>Order by <b style={{ color: "#425466" }}>09:06:14</b> on in-stock items and expect your order to be shipped today.</span></Typography>
                             </Box>
                         </Grid>
                         <Grid item
@@ -157,13 +157,13 @@ const Home = () => {
                                     fontSize: '14px',
                                     lineHeight: '100%',
                                     marginBottom: '0.5rem'
-                                }}>Vi har danmarks bedste kunder</Typography>
+                                }}>We have Denmark's best customers</Typography>
                                 <Typography sx={{
                                     color: '#425466',
                                     fontWeight: 400,
                                     fontSize: '14px',
                                     lineHeight: '140%',
-                                }}><span>Vores kunders tilfredshed er i højsædet hos os. <span style={{ color: '#425466' }}>Bare se vores</span> <b style={{ color: '#00B67A', textDecoration: 'underline' }}>Trustscore 4.5</b></span></Typography>
+                                }}><span>Our customers' satisfaction is our top priority. <span style={{ color: '#425466' }}>Just look at our </span> <b style={{ color: '#00B67A', textDecoration: 'underline' }}>Trustscore 4.5</b></span></Typography>
                             </Box>
                         </Grid>
                         <Grid item
@@ -189,13 +189,13 @@ const Home = () => {
                                     fontSize: '14px',
                                     lineHeight: '100%',
                                     marginBottom: '0.5rem'
-                                }}>Kundeservice 9-17</Typography>
+                                }}>24/7 Customers support</Typography>
                                 <Typography sx={{
                                     color: '#425466',
                                     fontWeight: 400,
                                     fontSize: '14px',
                                     lineHeight: '140%',
-                                }}><span>Kundeservice er live på chatten man-fre fra 9-17</span></Typography>
+                                }}><span>Live Chat customers support every hour of the day.</span></Typography>
                             </Box>
                         </Grid>
                     </Grid>
