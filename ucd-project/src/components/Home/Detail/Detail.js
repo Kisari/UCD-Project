@@ -217,29 +217,29 @@ const Detail = () => {
                 </Box>
                 <Box sx={{ marginTop: '140px' }}>
                     <Typography variant='h4' component='div' sx={{ marginBottom: '16px', fontFamily: 'Inter' }}>
-                        <b>All Product</b>
+                        <b>All Products</b>
                     </Typography>
                     <Stack spacing={2} direction={{ xs: 'column', md: 'row' }} sx={{ fontFamily: 'Inter', marginBottom: '48px' }}>
                         <Button variant='contained'
                             sx={{
                                 color: '#FFFFFF', background: '#2D68FF', border: '1px solid #A2C7FF',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Barbær</Button>
+                            }}>Laptops</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Stationær Pc’er</Button>
+                            }}>PC</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Skræme</Button>
+                            }}>Smartphones</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Mobiler & Tilbehør</Button>
+                            }}>Mobiles & Tablets</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
@@ -249,12 +249,12 @@ const Detail = () => {
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Printere</Button>
+                            }}>Printers</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Komponenter</Button>
+                            }}>Accessories</Button>
                     </Stack>
                     <Grid container spacing={{ xs: 1, md: 2 }}
                         justifyContent="center"
