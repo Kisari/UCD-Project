@@ -8,6 +8,10 @@ import purpose1 from '../../images/gaming.jpg'
 import purpose2 from '../../images/office.jpg'
 import purpose3 from '../../images/designer 2d.jpg'
 import purpose4 from '../../images/programming.jpg'
+import purpose5 from '../../images/video.jpg'
+import purpose6 from '../../images/remote.jpg'
+
+
 
 const AIProgess2 = () => {
     let { computer } = useParams();
@@ -26,7 +30,7 @@ const AIProgess2 = () => {
                     lineHeight: '100%',
                     textAlign: 'center',
                     marginBottom: '36px'
-                }}>Are you looking for a PC or a Laptop?</Typography>
+                }}>What would you use it for?</Typography>
 
                 <Grid container
                     direction='row'
@@ -155,6 +159,70 @@ const AIProgess2 = () => {
                             }
                         }}>
                             <img src={purpose4} alt="cute robot" style={{
+                                maxWidth: '400px',
+                                maxHeight: '250px',
+                                background: 'radial-gradient(74.66% 74.66% at 19.32% 17.18%, #2D67FF 35.05%, #2DA7FF 100%)',
+                                boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)',
+                                borderRadius: '8px',
+                            }} />
+                        </Button>
+                    </Grid>
+                    <Grid item>
+                        <Button href={`${link}/Video-Editing`} underline="none" sx={{
+                            position: 'relative',
+                            textAlign: 'center',
+                            width: '250px',
+                            height: '250px',
+                            '&:hover > *': {
+                                opacity: 0.5,
+                                background: 'rgba(0, 0, 0, 1.2)',
+                            },
+                            '&:hover::after': {
+                                content: '"Video Editing"',
+                                opacity: 1,
+                                position: 'absolute',
+                                zIndex: 99999,
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                                fontSize: '2.5rem',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                            }
+                        }}>
+                            <img src={purpose5} alt="cute robot" style={{
+                                maxWidth: '400px',
+                                maxHeight: '250px',
+                                background: 'radial-gradient(74.66% 74.66% at 19.32% 17.18%, #2D67FF 35.05%, #2DA7FF 100%)',
+                                boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)',
+                                borderRadius: '8px',
+                            }} />
+                        </Button>
+                    </Grid>
+                    <Grid item>
+                        <Button href={`${link}/Remote-Work`} underline="none" sx={{
+                            position: 'relative',
+                            textAlign: 'center',
+                            width: '250px',
+                            height: '250px',
+                            '&:hover > *': {
+                                opacity: 0.5,
+                                background: 'rgba(0, 0, 0, 1.2)',
+                            },
+                            '&:hover::after': {
+                                content: '"Remote Work"',
+                                opacity: 1,
+                                position: 'absolute',
+                                zIndex: 99999,
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                                fontSize: '2.5rem',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                            }
+                        }}>
+                            <img src={purpose6} alt="cute robot" style={{
                                 maxWidth: '400px',
                                 maxHeight: '250px',
                                 background: 'radial-gradient(74.66% 74.66% at 19.32% 17.18%, #2D67FF 35.05%, #2DA7FF 100%)',
