@@ -26,29 +26,29 @@ const Detail = () => {
         image: product1,
         title1: "Apple",
         title2: "EAN 0190199320246",
-        name: "AirTag Anti-tab Bluetooth-tag Sort Sølv Hvid",
+        name: "Apple Airtag Bluetooth 4-Pack",
         description: "Apple AirTag - Anti-tab Bluetooth-tag for mobiltelefon, tablet (pakke med 4)",
         discount: "200,-",
         price: "216,-",
-        other: "172.80,- ekskl. moms"
+        other: "172.80, excluding VAT"
 
     }, {
         image: product2,
         title1: "Google",
         title2: "EAN 193575007342",
-        name: "Chromecast med Google TV 4K HDR m. Fjernbetjening",
-        description: "Tilslut din Chromecast med Google TV og omdan dit TV til et ægte smart TV!",
+        name: "Google Chromecast and Google TV",
+        description: "Connect your Chromecast with Google TV and turn your TV into a real smart TV!",
         price: "551,-",
-        other: "440.80,- ekskl. moms"
+        other: "440.80, excluding VAT"
     },
     {
         image: product3,
         title1: "ZTE",
         title2: "EAN 6902176053337",
-        name: "HyperBox 5G MC801A Trådløs router Desktop",
-        description: "Trådløs router - WWAN - 2-port switch - 802.11a/b/g/n/ac/ax - Dual Band - 3G, 4G, 5G",
+        name: "HyperBox 5G MC801A Router Desktop",
+        description: "WWAN - 2-port switch - 802.11a/b/g/n/ac/ax - Dual Band - 3G, 4G, 5G",
         price: "1.957,-",
-        other: "1.565,- ekskl. moms"
+        other: "1.565, excluding VAT"
     },
     {
         image: product4,
@@ -57,16 +57,16 @@ const Detail = () => {
         name: "GeForce RTX 3080 VISION OC 10G (rev. 2.0) 10GB",
         description: "10 GB GDDR6X - PCIe 4.0 x16 - 2 x HDMI, 3 x DisplayPort",
         price: "8.774,-",
-        other: "7.019,- ekskl. moms"
+        other: "7.019, excluding VAT"
     },
     {
         image: product5,
         title1: "Ubiquiti",
         title2: "EAN 817882027373",
         name: "Unifi Dream Machine Pro",
-        description: "Styringsenhed for netværk - GigE - 1U - rackmonterbar",
+        description: "Network controller - GigE - 1U - rack mountable",
         price: "3.039,-",
-        other: "2.431,- ekskl. moms"
+        other: "2.431, excluding VAT"
     },
     ]
     const productList2 = [
@@ -77,7 +77,7 @@ const Detail = () => {
             name: "MacBook Air Retina display 13.3",
             description: "M1 - M1 8-core GPU - 8 GB RAM - 512 GB SSD - 13.3",
             price: "9.530,-",
-            other: "7.624,- ekskl. moms"
+            other: "7.624, excluding VAT"
         },
         {
             image: product7,
@@ -95,7 +95,7 @@ const Detail = () => {
             name: `MacBook Pro 14.2" Space grey`,
             description: `M1 Pro - M1 Pro 14-core GPU - 16 GB RAM - 512 GB SSD - 14.2" 3024 x 1964 @ 120 Hz`,
             price: "16.664,-",
-            other: "13.331,- ekskl. moms"
+            other: "13.331, excluding VAT"
         },
         {
             image: product9,
@@ -105,7 +105,7 @@ const Detail = () => {
             description: `Intel i7-1065G7 - 16GB RAM - 512GB NVMe SSD W10 HOME`,
             discount: "4.890,-",
             price: "5.213,-",
-            other: "4.170,- ekskl. moms"
+            other: "4.170, excluding VAT"
         },
         {
             image: product10,
@@ -114,7 +114,7 @@ const Detail = () => {
             name: `IdeaPad Duet 3 10IGL5 82AT 10.3" IPS Touch`,
             description: `Pentium Silver N5030 / 1.1 GHz - Win 10 Pro 64-bit - UHD Graphics 605 - 8 GB RAM - 128 GB eMMC`,
             price: "2.650,-",
-            other: "2.120,- ekskl. moms"
+            other: "2.120, excluding VAT"
         },
         {
             image: product11,
@@ -123,7 +123,7 @@ const Detail = () => {
             name: `IdeaPad 3 15ADA05 81W1 15.6"`,
             description: `Ryzen 3 3250U / 2.6 GHz - Win 10 Home in S mode - Radeon Graphics - 8 GB RAM - 256 GB SSD NVMe`,
             price: "3.394,-",
-            other: "2.715,- ekskl. moms"
+            other: "2.715, excluding VAT"
         },
         {
             image: product12,
@@ -132,16 +132,16 @@ const Detail = () => {
             name: `ThinkPad X280 12.5" Sort`,
             description: `Core i5 8250U / 1.6 GHz - Win 10 Pro - UHD Graphics 620 - 8 GB RAM - 256 GB SSD - 12.5" 1920x1080`,
             price: "4.387,-",
-            other: "3.509,- ekskl. moms"
+            other: "3.509, excluding VAT"
         },
         {
             image: product13,
             title1: "Microsoft",
             title2: "EAN 0889842596250",
-            name: `Surface Go 2 10.5" Sølv `,
+            name: `Surface Go 2 10.5"`,
             description: `Pentium Gold 4425Y / 1.7 GHz - Win 10 Pro - UHD Graphics 615 - 8 GB RAM - 128 GB SSD - 10.5" touchscreen 1920 x 1280`,
             price: "3.807,-",
-            other: "3.045,- ekskl. moms"
+            other: "3.045, excluding VAT"
         },
         {
             image: product14,
@@ -150,7 +150,7 @@ const Detail = () => {
             name: `EAN 4711081181293`,
             description: `Core i5 1135G7 / 2.4 GHz - Windows 10 Home - Iris Xe Graphics - 8 GB RAM - 512 GB SSD NVMe - 17.3” 1600x900`,
             price: "5.428,-",
-            other: "4.342,- ekskl. moms"
+            other: "4.342, excluding VAT"
         },
         {
             image: product15,
@@ -159,7 +159,7 @@ const Detail = () => {
             name: `ThinkPad X1 Extreme Gen 4 16”`,
             description: `Intel® Core™ i9 vPro - 	Windows 11 Pro - RTX™ 3070 Max-Q 8GB GDDR6 - 16 GB RAM - 1 TB PCIe NVMe Gen 4 - 16” 3840 x 2400 IPS Touch`,
             price: "22.499,-",
-            other: "17.999,- ekskl. moms"
+            other: "17.999, excluding VAT"
         },
 
     ]
@@ -217,29 +217,29 @@ const Detail = () => {
                 </Box>
                 <Box sx={{ marginTop: '140px' }}>
                     <Typography variant='h4' component='div' sx={{ marginBottom: '16px', fontFamily: 'Inter' }}>
-                        <b>All Product</b>
+                        <b>All Products</b>
                     </Typography>
                     <Stack spacing={2} direction={{ xs: 'column', md: 'row' }} sx={{ fontFamily: 'Inter', marginBottom: '48px' }}>
                         <Button variant='contained'
                             sx={{
                                 color: '#FFFFFF', background: '#2D68FF', border: '1px solid #A2C7FF',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Barbær</Button>
+                            }}>Laptops</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Stationær Pc’er</Button>
+                            }}>PC</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Skræme</Button>
+                            }}>Smartphones</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Mobiler & Tilbehør</Button>
+                            }}>Mobiles & Tablets</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
@@ -249,12 +249,12 @@ const Detail = () => {
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Printere</Button>
+                            }}>Printers</Button>
                         <Button variant='contained'
                             sx={{
                                 color: '#0A2540', background: '#FFFFFF', border: '1px solid #E4E4E4',
                                 borderRadius: '999px', boxShadow: 'none', fontFamily: 'Inter'
-                            }}>Komponenter</Button>
+                            }}>Accessories</Button>
                     </Stack>
                     <Grid container spacing={{ xs: 1, md: 2 }}
                         justifyContent="center"
@@ -273,7 +273,7 @@ const Detail = () => {
                         <Button variant='contained' size='medium' sx={{
                             color: '#FFFFFF', background: '#001834',
                             borderRadius: '4px', boxShadow: 'none', fontFamily: 'Inter'
-                        }}>Indlæs Flere Produkter</Button>
+                        }}>Load More Products</Button>
                     </Stack>
                 </Box>
             </Container>
