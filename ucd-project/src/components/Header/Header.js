@@ -13,10 +13,11 @@ const Header = () => {
 
     return (
         <>
-            <Container component='main' disableGutters={true} maxWidth='xl'
+            <Box
                 sx={{
                     marginLeft: '40px',
                     marginRight: '40px',
+                    width: '100%',
                 }}>
                 <Grid container
                     direction="row"
@@ -135,7 +136,7 @@ const Header = () => {
                         Free shipping for orders over $100
                     </Button>
                 </Stack>
-            </Container>
+            </Box>
         </>
     )
 }
